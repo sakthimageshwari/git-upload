@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-form h2 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.registration-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.registration-form button {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="registration-form">
+            <h2>Student Registration</h2>
+            <input type="text" name="first_name" placeholder="First Name" >
+            <input type="text" name="last_name" placeholder="Last Name" >
+            <select name="gender" >
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="date" name="dob" placeholder="Date of Birth" >
+            <input type="text" name="parent_name" placeholder="Father/Mother Name">
+            <input type="tel" name="parent_phone" placeholder="Parent Phone Number" >
+            <input type="text" name="school_name" placeholder="School Name" >
+            <input type="text" name="school_location" placeholder="School Location" >
+            <select name="class" >
+                <option value="" disabled selected>Select Class</option>
+                <option value="class3">8th</option>
+                <option value="class3">9th</option>
+                <option value="class1">10th </option>
+                <option value="class2">11th</option>
+                <option value="class3">12th</option>
+                <!-- Add more classes as needed -->
+            </select>
+            <input type="tel" name="student_phone" placeholder="Student Phone Number" >
+            <input type="email" name="email" placeholder="Email ID" >
+            <select name="board" >
+                <option value="" disabled selected>Select Board</option>
+                <option value="board1">State Board </option>
+                <option value="board2">CBSC</option>
+                <!-- Add more boards as needed -->
+            </select>
+            
+            </select>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
