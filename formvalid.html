@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body 
+        {
+            background-color:bisque;
+        }
+input 
+{
+    display:block;
+    margin-bottom:10px;
+    padding:5px;
+}
+.error 
+{
+color:red;
+font-size:19px;
+}
+    </style>
+</head>
+<body>
+    <h1>Form Validations</h1>
+<form id="myform" onsubmit="return validateform()">
+    <label for="name">NAME</label>
+    <input type="text" id="name" name="name">
+
+    <span id="nameError" class="error"></span>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email">
+
+    <span id="EmailError" class="error"></span>
+
+
+    <label for="pswd">PASSWORD</label>
+    <input type="Password" id="pswd" name="pswd">
+
+    <span id="passwordError" class="error"></span>
+
+
+    <label for="confirmpassword">CONFIRM PASSWORD</label>
+    <input type="password" id="confirmpassword" name="confirmpassword">
+
+    <span id="confirmError" class="error"></span>
+
+
+    <button type="submit">SUBMIT</button>
+</form>
+<script>
+    function validateform()
+    {
+        let isValid=true;
+        let name=document.getElementById('name').value;
+        let email=document.getElementById('email').value;
+        let password=document.getElementById('password').value;
+        let confirmpassword=document.getElementById('confirmpassword').value;
+    document.getElementById('nameError').innerText="";
+    document.getElementById('emailError').innerText="";
+    document.getElementById('passwordError').innerText="";
+    document.getElementById('confirmError').innerText="";
+
+
+    if(name.trim()==="")
+    {
+        document.getElementById.innerText="Name to be filled";
+        isValid=false;
+    }
+    if(email.trim()==='')
+    {
+        document.getElementById.innerText="Email is required";
+        isValid=false;
+    }
+    else if(!email.includes("@"))
+{
+    document.getElementById('emailError').innerText='email is valid now';
+    isValid=false;
+}
+  if(password.trim()==="")
+  {
+    document.getElementById('passwordError').innerText='password is required';
+    isValid=false; 
+  }
+  else if(password.length >8 )
+  {
+    document.getElementById('passwordError').innerText='password must be atleast 9characters';
+    isValid=false;
+  }
+if(confirmPassword.trim()==="")
+{
+    document.getElementById('confirmpasswordError').innerText='confirm password is requires';
+    isValid=false;
+}
+else if(confirmPassword !==password)
+{
+    document.getElementById('confirmPasswordError').innerText='password should match';
+    isValid=false;
+}
+return isValid;
+    }
+</script>
+</body>
+</html>
