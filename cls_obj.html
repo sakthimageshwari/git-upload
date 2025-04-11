@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Class and Object</h2>
+    <script>
+    class Employeer
+    {
+        constructor(emp_id,emp_name,designation,salary,location)
+        {
+            this.emp_id=emp_id;
+            this.emp_name=emp_name;
+            this.designation=designation;
+            this.salary=salary;
+            this.location=location;
+
+
+        }
+        display()
+        {
+            document.write(this.emp_id+' '+this.emp_name+' '+this.designation+' '+this.salary+this.location+'</br>');
+
+        }
+    }
+
+        var emp1=new Employeer('AS1001','Sammer','HR',100000,'CHENNAI');
+        emp1.display();
+        var emp2=new Employeer('AS1002','Sam','MANAGER',7000000,'CHENNAI');
+        emp2.display();
+        var emp3=new Employeer('AS1003','Rajesh','HR',800000,'CHENNAI');
+        emp3.display();
+        var emp4=new Employeer('AS1004','Lakshmi','OFFICER',70000000,'CHENNAI');
+        emp4.display();
+        var emp5=new Employeer('AS1005','Abi','HR',10000000,'CHENNAI');
+        emp5.display();
+
+
+        
+
+    </script>
+</body>
+</html>
