@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age calculator</title>
+    <style>
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+         
+        }
+        span{
+            color: darkred;
+        }
+        
+    .container
+        {
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://images.wallpapersden.com/image/download/mix-colour-background_a2ltZmiUmZqaraWkpJRobWllrWdma2U.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    }
+
+    .user-info {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: orange;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-info input,
+.user-info select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+            
+    .calculator
+    {
+        width: 100%;
+        max-width: 600px;
+        margin-left: 10%;
+        margin-top: 10%; 
+
+    }
+    .container h1{
+    
+        font-size: 6;
+    }
+    .calculator h1 span{
+        color:rgb(218, 14, 14);
+    }
+   
+    .inputbox{
+        margin: 45px 0;
+        padding: 35px;
+        border-radius: 10px;
+        background: palevioletred;
+        display: flex;
+        align-items: center;
+    }
+    .inputbox input{
+        flex: 1;
+        margin-right:20px ;
+        border: 0;
+        padding: 14px;
+        font-size: 18px;
+
+    }
+    .inputbox button{
+        background:greenyellow;
+        border: 0;
+        outline: 0;
+        padding: 15px 30px;
+        border-radius: 5px;
+        color: black;
+        cursor: pointer;
+       
+    }
+    
+    .btn:hover{
+        background-color:yellow;
+    }
+    .wrapper{
+        margin-top: 40px;
+        width: 100%;
+        max-width: 600px;
+        box-shadow: rebeccapurple;
+        border-radius: 5px;
+        padding: 15px;
+        background: yellowgreen;
+    
+    }
+    .wrapper h1 span{
+        color:rgb(218, 14, 14);
+
+    }
+    .btn1:hover{
+        background-color: blueviolet;
+
+    }
+    
+    
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="calculator">
+            <center ><h1><span> Personal Information</span></h1></center>
+            <div class="user-info">
+                <input type="text" id="name" placeholder="Enter your name">
+                <select id="gender">
+                        <option value="select">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+            </div>
+            <center><h1><span>Age Calculator</span></h1></center>
+            <div class="inputbox"> 
+                <input type="date" id="date">
+                <button class="btn" onclick="calculateAge()">calculator</button><br>
+                
+            </div>
+            <p id="result"></p>
+            <div class="wrapper">
+                
+                <center><h1><span>BMI Calculator</span></h1></center>
+                <p>Height in CM:
+                    <input type="text" id="height"><br>
+                    <span id="height_error"></span>
+                </p>
+                <p>Weight in KG:
+                    <input type="text" id="weight"><br>
+                    <span id="weight_error"></span>
+        
+                </p>
+                <button id="btn1">Caculate BMI</button>
+                <p id="output"></p>
+             </div>
+        </div>
+    </div>
+
+   <script>
+    let username=document.getElementById('name').value;
+    let usergender=document.getElementById('gender').value;
+    let userinput= document.getElementById("date");
+    userinput.max= new Date().toISOString().split("T")[0];//converts a date into a string formatted in ISO 8601 standard 
+    //split time
+    let result=document.getElementById("result");
+    function calculateAge()
+    {
+        
+        let birthDate=new Date(userinput.value);// get user date
+        //dob
+       let d1= birthDate.getDate();
+       let m1= birthDate.getMonth()+ 1; //+1 is give starting number for january month
+       let y1= birthDate.getFullYear();
+
+       let today=new Date();
+    //toady date
+       let d2= today.getDate();
+       let m2= today.getMonth()+ 1;
+       let y2= today.getFullYear();
+
+       let y3=y2-y1;//yr diff
+       let m3,d3; //to initialize var difference in d,m
+        
+        //month diff
+        if(m2>=m1)//todays m > dob m
+        {
+            m3=m2-m1;//m diff
+        }
+        else
+        {
+            y3--;
+            m3=12+m2-m1;
+        }
+        //day calcu ewhen crosses the month limit
+        if(d2>=d1)
+        {
+            d3=d2-d1;
+        }
+        else
+        {
+            m3--;
+           
+            d3=getDaysInMonth(y1,m1) + d2-d1;//to get total days of birth month
+        }
+        if (m3< 0)// if month gets -ve
+        {
+            m3=11;
+            y3--;//yr will be dec by 1
+        }
+        
+        console.log(y3,m3,d3);
+        result.innerHTML='You are'+ " "+ y3 +" "+"years"+" "+m3+" "+" months and"+" " +d3+" "+"days old.";
+    }
+    function getDaysInMonth(year,month)//exact no of days in that perticular month
+    {
+        return new Date(year,month,0).getDate();
+        //return last day of the previous month and get exactly total no. of days  in that month
+
+
+    }
+
+
+    let button=document.getElementById('btn1')
+    button.addEventListener('click',()=> {
+        const height=parseFloat(document.getElementById('height').value);
+        const weight=parseFloat(document.getElementById('weight').value);
+        const result=document.getElementById('output');
+        let height_status=false,weight_status= false;
+
+        if(height=="" || isNaN(height)||(height<=0)){
+            document.getElementById('height_error').innerHTML ='please provide a valid height';
+
+        }
+        else{
+            document.getElementById('height_error').innerHTML="";
+            height_status=true;
+        
+        }
+
+        if(weight=== '' || isNaN(weight) || (weight<=0)){
+            document.getElementById('weight_error').innerHTML ='please provide a valid weight';  
+        }
+        else{
+            document.getElementById('weight_error').innerHTML='';
+            weight_status=true;
+
+        }
+        if(height_status && weight_status){
+            const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+
+            if(bmi<18.6){
+                result.innerHTML='Under weight: '+ bmi;
+            }
+            else if(bmi>=18.6 && bmi< 24.9){
+                result.innerHTML='Normal:'+bmi;
+            
+            }
+            else{
+                result.innerHTML='Over weight:'+bmi;
+
+            }
+        }
+        else{
+            alert('The form has errors');
+            result.innerHTML='';
+        }
+        
+    });
+   </script>
+    
+</body>
+</html>
