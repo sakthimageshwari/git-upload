@@ -6,3 +6,4 @@
 6. list.html - this show cases the list concept in html
 7. age_bmi.html - this is a small froentend project which calculate your age and BMI for the given data
 8. and.py - this  show cases a small example using  "and" and "or" 
+9. sum_of_digits.py - it will show cases the sum of given digits with out built in function
