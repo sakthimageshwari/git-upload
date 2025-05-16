@@ -10,3 +10,4 @@
 10. armstrong_number.py - this python program will represent the  number is armstrong number or not with out using builtin function
 11. reverse_the_numbers.py - This python program will rever the given number
 12. pin_number_practice.py - This is a practice program using while and if condition 
+13. ASCII.py - this is a simple program using ascii logic to converting digits form string and finding the sum of the digits
