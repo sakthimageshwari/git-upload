@@ -1,10 +1,6 @@
 # Reversing sentence 
 
-p = """
-hii  i am sakthi.
-i am a good girl.
-i love to read books.
-"""
+p = input("enter the sentence:")
 a = p.strip().split('\n')
 
 for i in a:
