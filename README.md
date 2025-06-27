@@ -11,4 +11,5 @@
 11. reverse_the_numbers.py - This python program will rever the given number
 12. pin_number_practice.py - This is a practice program using while and if condition 
 13. ASCII.py - this is a simple program using ascii logic to converting digits form string and finding the sum of the digits
-14. prime_number - this is a simple logic for prime number 
+14. prime_number_practice.py - this is a simple logic for prime number 
+15. rev_words.py - this will reverse the words in the given paragraph using python functions
