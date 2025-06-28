@@ -13,3 +13,4 @@
 13. ASCII.py - this is a simple program using ascii logic to converting digits form string and finding the sum of the digits
 14. prime_number_practice.py - this is a simple logic for prime number 
 15. rev_words.py - this will reverse the words in the given paragraph using python functions
+16. vowels.py - this will give simple logic to find the count for vowels, consonants and spaces in the given sentence
